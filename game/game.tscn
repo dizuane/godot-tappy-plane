@@ -26,9 +26,12 @@ texture = ExtResource("1_shgys")
 
 [node name="PlaneCB" parent="." instance=ExtResource("2_761xy")]
 position = Vector2(58, 274)
+collision_mask = 8
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 849)
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(563, 5)
