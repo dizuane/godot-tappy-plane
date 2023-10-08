@@ -9,6 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameManager.on_game_over.connect(on_game_over)
+	GameManager.set_score(0)
 	spawn_pipes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
