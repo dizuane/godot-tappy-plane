@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameManager.on_game_over.connect(on_game_over)
 	spawn_pipes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,3 +24,11 @@ func spawn_pipes() -> void:
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()
+
+func on_game_over():
+	stop_pipes()
+
+func stop_pipes() -> void:
+	spawn_timer.stop()
+	for pipe in pipes_holder.get_children():
+		pipe.set_process(false)

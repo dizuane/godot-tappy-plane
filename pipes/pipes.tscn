@@ -20,4 +20,6 @@ position = Vector2(0, 80)
 position = Vector2(66.5, 0)
 scale = Vector2(0.45, 1)
 
+[connection signal="body_entered" from="Upper" to="." method="_on_pipe_body_entered"]
+[connection signal="body_entered" from="Lower" to="." method="_on_pipe_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
