@@ -1,6 +1,7 @@
 extends Node2D
 
 const SCROLL_SPEED : float = 120.0
+@onready var score_sound = $ScoreSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,7 @@ func _on_screen_exited():
 	queue_free()
 
 func player_scored() -> void:
+	score_sound.play()
 	GameManager.increment_score()
 
 func _on_pipe_body_entered(body):
