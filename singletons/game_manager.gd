@@ -1,6 +1,7 @@
 extends Node
 
 const GROUP_PLANE : String = "plane"
+const GAME_SPEED : float = 120.0
 
 var game_scene : PackedScene = preload("res://game/game.tscn")
 var main_scene : PackedScene = preload("res://main/main.tscn")
@@ -22,7 +23,7 @@ func set_score(v: int) -> void:
 	if _score > _high_score:
 		_high_score = _score
 	on_score_updated.emit()
-	print("score: %s, high score: %s" % [_score, _high_score])
+	# print("score: %s, high score: %s" % [_score, _high_score])
 
 func increment_score() -> void:
 	set_score(get_score()+1)
